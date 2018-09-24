@@ -1,0 +1,11 @@
+<div class="books-list">
+  <h1>Самое незаметное издательство</h1>
+  <p>Перетаскивайте книги ниже с места на место. Это то, чем<br/> мы любим больше всего заниматься. Попробуйте, вам понравится.</p>
+  <div id="columns">
+    <div class="book-block" ng-repeat="book in $ctrl.books track by $index" ng-init="$last && $ctrl.ngRepeatFinished()" draggable="true">
+      <div class="img-block"><img src='{{book.img}}'></div>
+      <div class="description">{{book.description}}</div>
+    </div>
+  </div>
+  <button class="more" ng-click="$ctrl.addMoreBooks()">Еще несколько книг</button>
+</div>
