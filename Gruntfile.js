@@ -8,6 +8,10 @@ module.exports = function(grunt) {
         "esversion": 6
       }
     },
+    'http-server': {
+      port: 8282,
+      host: "0.0.0.0"
+    },
     watch: {
       files: ['<%= jshint.files %>'],
       tasks: ['jshint']
@@ -42,6 +46,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.registerTask('default', ['sass', 'jshint', 'babel', 'uglify']);
+  grunt.loadNpmTasks('grunt-http-server');
+  grunt.registerTask('default', ['sass', 'jshint', 'babel', 'uglify', 'http-server']);
 
 };
